@@ -152,30 +152,35 @@ jQuery(document).ready(function ($) {
 document.addEventListener("DOMContentLoaded", function () {
   // --- Modal Portfolio ---
   const portfolioItems = document.querySelectorAll(".portfolio-item");
+  const filters = document.querySelectorAll(".portfolio.filters a");
 
   portfolioItems.forEach((item) => {
     item.addEventListener("click", function () {
       const videoElement = this.querySelector("video");
-      const imgElement = this.querySelector("img"); // Diperbaiki
+      const iframeElement = this.querySelector("iframe");
+      const imgElement = this.querySelector("img");
       const title = this.querySelector(".title").textContent;
       const subtitle = this.querySelector(".subtitle").textContent;
 
       let mediaSrc = "";
-      let isVideo = false;
+      let mediaType = "";
 
       if (videoElement) {
         mediaSrc = videoElement.querySelector("source").src;
-        isVideo = true;
+        mediaType = "video";
+      } else if (iframeElement) {
+        mediaSrc = iframeElement.src;
+        mediaType = "iframe";
       } else if (imgElement) {
         mediaSrc = imgElement.src;
+        mediaType = "image";
       }
 
-      // Tampilkan modal
-      showModal(mediaSrc, title, subtitle, isVideo);
+      showModal(mediaSrc, title, subtitle, mediaType);
     });
   });
 
-  function showModal(mediaSrc, title, subtitle, isVideo) {
+  function showModal(mediaSrc, title, subtitle, mediaType) {
     let modal = document.querySelector(".portfolio-modal");
 
     if (!modal) {
@@ -197,44 +202,52 @@ document.addEventListener("DOMContentLoaded", function () {
     const mediaContainer = modal.querySelector(".media-container");
     mediaContainer.innerHTML = "";
 
-    if (isVideo) {
+    if (mediaType === "video") {
       mediaContainer.innerHTML = `<video controls autoplay width="100%">
           <source src="${mediaSrc}" type="video/mp4">
           Your browser does not support the video tag.
         </video>`;
-    } else {
+    } else if (mediaType === "iframe") {
+      mediaContainer.innerHTML = `<iframe src="${mediaSrc}" width="100%" height="400" frameborder="0" allow="autoplay"></iframe>`;
+    } else if (mediaType === "image") {
       mediaContainer.innerHTML = `<img src="${mediaSrc}" alt="${title}" style="width:100%"/>`;
     }
 
     modal.style.display = "flex";
 
-    // Tutup modal saat tombol close diklik
-    modal.querySelector(".close-btn").addEventListener("click", function () {
-      modal.style.display = "none";
-    });
+    const closeButton = modal.querySelector(".close-btn");
+    closeButton.onclick = function () {
+      closeModal(modal);
+    };
 
-    // Tutup modal saat klik di luar konten
-    modal.addEventListener("click", function (e) {
+    modal.onclick = function (e) {
       if (e.target === modal) {
-        modal.style.display = "none";
+        closeModal(modal);
       }
-    });
+    };
+  }
+
+  function closeModal(modal) {
+    modal.style.display = "none";
+    modal.querySelector(".media-container").innerHTML = "";
   }
 
   // --- Filter Portfolio ---
-  const filters = document.querySelectorAll(".portfolio.filters a");
-
   filters.forEach((filter) => {
     filter.addEventListener("click", function (e) {
       e.preventDefault();
 
-      // Update active class
       document.querySelector(".filters a.active")?.classList.remove("active");
       this.classList.add("active");
 
       let filterClass = this.getAttribute("data-filter");
+
       portfolioItems.forEach((item) => {
-        item.style.display = filterClass === "*" || item.classList.contains(filterClass.substring(1)) ? "block" : "none";
+        if (filterClass === "*") {
+          item.style.display = "block"; // Menampilkan semua item saat klik "All"
+        } else {
+          item.style.display = item.classList.contains(filterClass.substring(1)) ? "block" : "none";
+        }
       });
     });
   });
