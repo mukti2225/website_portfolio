@@ -46,14 +46,14 @@ header .banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px auto;
-  height: 100vh;
+  margin: 2% auto;
+  height: 100%;
   text-align: start;
-  padding-bottom: 20px;
+  padding-bottom: 2%;
 }
 
 header .banner-text {
-  max-width: 500px;
+  max-width: 50%;
 }
 
 header .banner-text h1 {
@@ -205,6 +205,12 @@ ul#nav li.current a {
   border-radius: 10px;
   margin-left: 30px;
   /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); */
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    display: none;
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -461,7 +467,6 @@ ul#nav li.current a {
   opacity: 1;
   visibility: visible;
 }
-
 .modal-content {
   background: white;
   padding: 20px;
@@ -492,7 +497,8 @@ ul#nav li.current a {
 
 .modal-content img {
   width: 100%;
-  max-width: 400px;
+  height: auto;
+  max-width: 70vh;
   border-radius: 8px;
 }
 
@@ -504,7 +510,6 @@ ul#nav li.current a {
 .modal-content p {
   color: #666;
 }
-
 .close-btn {
   position: absolute;
   top: 10px;
@@ -512,7 +517,6 @@ ul#nav li.current a {
   font-size: 24px;
   cursor: pointer;
 }
-
 @keyframes fadeIn {
   from {
     transform: translateY(-10px);
