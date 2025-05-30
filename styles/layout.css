@@ -1,0 +1,970 @@
+/*
+=====================================================================
+*   Ceevee v1.0 Layout Stylesheet
+*   url: styleshout.com
+*   03-18-2014
+=====================================================================
+
+   TOC:
+   a. General Styles
+   b. Header Styles
+   c. About Section
+   d. Resume Section
+   e. Portfolio Section
+   f. Call To Action Section
+   g. Testimonials Section
+   h. Contact Section
+   i. Footer
+
+===================================================================== */
+
+/* ------------------------------------------------------------------ */
+/* a. General Styles
+/* ------------------------------------------------------------------ */
+
+body {
+  background: black;
+}
+
+/* ------------------------------------------------------------------ */
+/* b. Header Styles
+/* ------------------------------------------------------------------ */
+
+header {
+  position: relative;
+  height: 800px;
+  min-height: 500px;
+  width: 100%;
+  background-size: cover !important;
+  -webkit-background-size: cover !important;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* vertically center banner section */
+header .banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2% auto;
+  height: 100%;
+  text-align: start;
+  padding-bottom: 2%;
+}
+
+header .banner-text {
+  max-width: 50%;
+}
+
+header .banner-text h1 {
+  font: 40px "opensans", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 10px auto;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+}
+header .banner-text h3 {
+  font: 18px/1.5em "librebaskerville-regular", serif;
+  color: #bebebe;
+  margin: 0 auto;
+  width: 100%;
+  text-align: start;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+header .banner-text h3 span,
+header .banner-text h3 a {
+  color: #ffffff;
+}
+header .banner-text hr {
+  width: 100%;
+  margin: 18px auto 24px auto;
+  border-color: #2f2d2e;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* header social links */
+header .social {
+  margin: 24px 0;
+  padding: 0;
+  font-size: 30px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+}
+header .social li {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0;
+}
+header .social li a {
+  color: #fff;
+}
+header .social li a:hover {
+  color: #11abb0;
+}
+
+/* scrolldown link */
+header .scrolldown a {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -29px;
+  color: #fff;
+  display: block;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  line-height: 42px;
+  color: #fff;
+  border-radius: 100%;
+
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+header .scrolldown a:hover {
+  color: #11abb0;
+}
+
+/* primary navigation
+--------------------------------------------------------------------- */
+#nav-wrap ul,
+#nav-wrap li,
+#nav-wrap a {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* nav-wrap */
+#nav-wrap {
+  font: 12px "opensans-bold", sans-serif;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin: 0 auto;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.opaque {
+  background-color: #333;
+}
+
+/* hide toggle button */
+#nav-wrap > a.mobile-btn {
+  display: none;
+}
+
+ul#nav {
+  min-height: 48px;
+  width: auto;
+
+  /* center align the menu */
+  text-align: center;
+}
+ul#nav li {
+  position: relative;
+  list-style: none;
+  height: 48px;
+  display: inline-block;
+}
+
+/* Links */
+ul#nav li a {
+  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
+
+  display: inline-block;
+  padding: 8px 13px;
+  line-height: 32px;
+  text-decoration: none;
+  text-align: left;
+  color: #fff;
+
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+ul#nav li a:active {
+  background-color: transparent !important;
+}
+ul#nav li.current a {
+  color: #11abb0;
+}
+
+.hero-image img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 30px;
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); */
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* c. About Section
+/* ------------------------------------------------------------------ */
+
+#about {
+  background: #2b2b2b;
+  padding-top: 90px;
+  padding-bottom: 60px;
+  overflow: hidden;
+  text-align: justify;
+}
+
+#about a,
+#about a:visited {
+  color: #fff;
+}
+
+#about h2 {
+  font: 22px/30px "opensans-bold", sans-serif;
+  color: #fff;
+  margin-bottom: 12px;
+}
+#about p {
+  line-height: 30px;
+  color: #7a7a7a;
+}
+#about .profile-pic {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+#about .contact-details {
+  width: 41.66667%;
+}
+#about .download {
+  width: 58.33333%;
+  padding-top: 6px;
+}
+#about .main-col {
+  padding-right: 5%;
+}
+#about .download .button {
+  margin-top: 6px;
+  background: #11abb0;
+}
+#about .download .button:hover {
+  background: #fff;
+  color: #11abb0;
+}
+#about .download .button i {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+/* ------------------------------------------------------------------ */
+/* d. Resume Section
+/* ------------------------------------------------------------------ */
+
+#resume {
+  background: #fff;
+  padding-top: 90px;
+  padding-bottom: 72px;
+  overflow: hidden;
+  text-align: justify;
+}
+
+#resume h1 {
+  font: 18px/24px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#resume h1 span {
+  border-bottom: 3px solid #11abb0;
+  padding-bottom: 6px;
+  color: #000;
+}
+#resume h3 {
+  font: 25px/30px "opensans-bold", sans-serif;
+  color: black;
+}
+
+#resume .main-col {
+  padding-right: 9%;
+}
+
+.education,
+.work {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d3d3d3;
+}
+#resume .info {
+  font: 16px/24px "librebaskerville-italic", serif;
+  color: #5a5a5a;
+  margin-bottom: 18px;
+  margin-top: 9px;
+}
+#resume .info span {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#resume .date {
+  font: 15px/24px "opensans-regular", sans-serif;
+  margin-top: 6px;
+}
+
+/*----------------------------------------------*/
+
+/* ------------------------------------------------------------------ */
+/* e. Portfolio Section
+/* ------------------------------------------------------------------ */
+
+#portfolio {
+  background: #ebeeee;
+  padding: 50px 20px 60px;
+  text-align: center;
+}
+
+#portfolio h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+/* ========== Filters ========== */
+.portfolio.filters {
+  border-bottom: 2px solid #dee2e6;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio.filters a {
+  color: #212529;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.7;
+  padding: 4px 10px;
+  text-decoration: none;
+  transition: opacity 0.3s, background 0.3s;
+}
+
+.portfolio.filters a:hover {
+  opacity: 0.9;
+}
+
+.portfolio.filters a.active {
+  background: #11abb0;
+  color: #fff;
+  opacity: 1;
+  border-radius: 3px;
+}
+
+/* ========== Portfolio Items ========== */
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio-item {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+/* ========== Overlay Content ========== */
+.content-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: #11abb0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.portfolio-item:hover .content-holder {
+  opacity: 1;
+  visibility: visible;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-weight: 500;
+}
+
+/* ========== Responsive Styles ========== */
+@media (max-width: 768px) {
+  .portfolio.filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .portfolio.filters a {
+    margin: 5px;
+    font-size: 12px;
+  }
+
+  .portfolio-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Modal Styling */
+.portfolio-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
+}
+
+.portfolio-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content .media-container {
+  width: 100%;
+  max-width: 400px; /* Sesuaikan ukuran maksimal video */
+  max-height: 70vh; /* Batasi tinggi maksimal */
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+  max-height: 70vh; /* Pastikan video tidak melebihi tinggi modal */
+  border-radius: 8px;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  max-width: 70vh;
+  border-radius: 8px;
+}
+
+.modal-content h2 {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.modal-content p {
+  color: #666;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ------------------------------------------------------------------ */
+/* e. Skills Section
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+
+/* ========== Skills Section Styles ========== */
+#skills {
+  background-color: white;
+  padding: 90px 20px 40px;
+  text-align: center;
+}
+
+#skills h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ========== Skill Bars ========== */
+.skills-container {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill p {
+  margin-bottom: 2px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 0px;
+}
+
+.progress {
+  text-align: right;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* ========== Skill Bar Colors ========== */
+.illustrator {
+  width: 85%;
+  background-color: #ffb200;
+}
+
+.premiere {
+  width: 80%;
+  background-color: #000957;
+}
+
+.after-effects {
+  width: 70%;
+  background-color: #00109c;
+}
+
+.photoshop {
+  width: 75%;
+  background-color: #005e9c;
+}
+
+.html {
+  width: 60%;
+  background-color: #3498db;
+}
+
+.figma {
+  width: 75%;
+  background-color: #db3434;
+}
+
+.logo {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.logo-track {
+  display: flex;
+  width: fit-content;
+  gap: 10%;
+}
+
+.logo-slide-wrapper {
+  display: flex;
+}
+
+.logo-slide {
+  display: flex;
+  gap: 50px;
+  animation: slide 5s linear infinite;
+}
+
+.logo-slide img {
+  width: 60px; /* Sesuaikan ukuran logo */
+  height: auto;
+}
+
+/* Animasi untuk slider bergerak terus-menerus */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* ========== Profile Pictures ========== */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .skills-container {
+    max-width: 90%;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Flex Slider
+/* ------------------------------------------------------------------ */
+
+/* Reset */
+.flexslider a:active,
+.flexslider a:focus {
+  outline: none;
+}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.slides li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Necessary Styles */
+.flexslider {
+  position: relative;
+  zoom: 1;
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides {
+  zoom: 1;
+}
+.flexslider .slides > li {
+  position: relative;
+}
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides > li {
+  display: none;
+}
+/* Suggested container for slide animation setups. Can replace this with your own */
+.flex-container {
+  zoom: 1;
+  position: relative;
+}
+
+/* Clearfix for .slides */
+.slides:before,
+.slides:after {
+  content: " ";
+  display: table;
+}
+.slides:after {
+  clear: both;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+  display: block;
+}
+
+/* Slider Styles */
+.slides {
+  zoom: 1;
+}
+.slides > li {
+  /*margin-right: 5px; */
+  overflow: hidden;
+}
+
+/* Control Nav */
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: -20px;
+  text-align: left;
+}
+.flex-control-nav li {
+  margin: 60px;
+  display: inline-block;
+  zoom: 1;
+  display: inline;
+}
+.flex-control-paging li a {
+  width: 12px;
+  height: 12px;
+  display: block;
+  background: #ddd;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  text-indent: -9999px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.3);
+}
+.flex-control-paging li a:hover {
+  background: #ccc;
+  background: rgba(255, 255, 255, 0.7);
+}
+.flex-control-paging li a.flex-active {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: default;
+}
+
+/* Contact Section */
+#contact {
+  background: #2b2b2b;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p.lead {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Form Styles */
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #11abb0;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #11abb0;
+}
+
+/* Required Field Indicator */
+#contact span.required {
+  color: #11abb0;
+  font-size: 13px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Footer Styling */
+.footer {
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.footer .cont {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li,
+.footer-social ul li {
+  margin: 5px 0;
+}
+
+.footer-links ul li a {
+  color: #666666;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover {
+  color: #11abb0;
+}
+
+/* Social Media Icons */
+.footer-social ul {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social ul li {
+  display: inline-block;
+}
+
+.footer-social ul li a {
+  color: #666666;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.footer-social ul li a:hover {
+  color: #11abb0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-social {
+    margin-top: 20px;
+  }
+}
